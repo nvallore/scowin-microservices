@@ -1,0 +1,87 @@
+version: '3.8'
+services:
+
+  vaccination-db:
+    image: postgres
+    restart: always
+    container_name: vaccination-db
+    volumes:
+      - ./vaccination/data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    command: -p 5433
+
+  vaccination-backend:
+    build:
+      context: ./vaccination
+      dockerfile: DockerFile
+    restart: always
+    command: bash -c 'python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8001'
+    ports:
+      - 8001:8001
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - .:/vaccination/app
+    depends_on:
+      - vaccination-db
+
+  vaccination-queue:
+    build:
+      context: ./vaccination
+      dockerfile: DockerFile
+    command: 'python -u consumer.py'
+    depends_on:
+      - vaccination-db
+
+  students-db:
+    image: postgres
+    container_name: students-db
+    restart: always
+    volumes:
+      - ./students/data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=students-postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    command: -p 5432
+
+  students-backend:
+    build:
+      context: ./students
+      dockerfile: DockerFile
+    restart: always
+    command: bash -c 'python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000'
+    ports:
+      - 8000:8000
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - .:/students/app
+    depends_on:
+      - students-db
+
+  students-queue:
+    build:
+      context: ./students
+      dockerfile: DockerFile
+    command: 'python -u consumer.py'
+    depends_on:
+      - students-db
+
+  api-gateway:
+    image: nginx:1.17.10
+    container_name: api-gateway
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+        - vaccination-backend
+        - students-backend
