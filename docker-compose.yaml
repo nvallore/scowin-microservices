@@ -75,6 +75,14 @@ services:
     depends_on:
       - students-db
 
+  report-backend:
+      build:
+        context: ./vaccine-reports
+        dockerfile: DockerFile
+      command: 'python main.py'
+      ports:
+        - 8003:8003
+        
   api-gateway:
     image: nginx:1.17.10
     container_name: api-gateway
@@ -85,3 +93,6 @@ services:
     depends_on:
         - vaccination-backend
         - students-backend
+        - report-backend
+
+  
