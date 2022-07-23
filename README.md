@@ -40,6 +40,7 @@ kubectl apply -f kube
 
 5) When the services, pods and PVC are up, we can access the application and see logs
 To see info about pods - $ kubectl get pod
+To see info about pods live - $ kubectl get pod --watch
 To see info about services - $ kubectl get service
 To see logs of particular pod - $ kubectl describe pod {pod_name}
 To get the url to access service - $ minikube service {service_name} --url
