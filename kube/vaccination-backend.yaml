@@ -1,0 +1,74 @@
+###########################
+# Deployment
+###########################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vaccination-backend
+  labels:
+    app: vaccination-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vaccination-backend
+  template:
+    metadata:
+      labels:
+        app: vaccination-backend
+    spec:
+      containers:
+      - args:
+            - bash
+            - -c
+            - python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+        name: vaccination-backend
+        image: nvallore/vaccination-backend
+        ports:
+        - containerPort: 8000
+        env:
+        env:
+        - name: POSTGRES_NAME
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: postgres
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: app-variables
+              key: POSTGRES_DB
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: app-variables
+              key: DB_HOST_VACCINATION
+
+    #     volumeMounts:
+    #        - name: postgres-volume-mount
+    #          mountPath: /var/lib/busybox
+
+    # volumes:
+    #   - name: postgres-volume-mount
+    #     persistentVolumeClaim:
+    #       claimName: postgres-pvc
+---
+###########################
+# Cluster IP Service
+###########################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: vaccination-backend
+spec:
+  type: NodePort
+  selector:
+    app: vaccination-backend
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+      nodePort: 31002

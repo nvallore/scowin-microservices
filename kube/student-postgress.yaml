@@ -1,0 +1,82 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: stu-pos
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 200M
+  hostPath:
+    path: /data/student/postgres
+  storageClassName: standard
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: stu-pos
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200M
+  volumeName: stu-pos
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: stu-pos
+  labels:
+    app: stu-pos
+    role: service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stu-pos
+      role: service
+  serviceName: stu-pos
+  template:
+    metadata:
+      labels:
+        app: stu-pos
+        role: service
+    spec:
+      containers:
+        - name: stu-pos
+          image: postgres
+          env:
+          - name: POSTGRES_PASSWORD
+            value: postgres
+          - name: POSTGRES_USER
+            value: postgres
+          ports:
+            - containerPort: 5432
+              name: stu-pos
+              protocol: TCP
+          volumeMounts:
+            - name: stu-pos
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: stu-pos
+          persistentVolumeClaim:
+            claimName: stu-pos
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stu-pos
+  labels:
+    app: stu-pos
+    role: service
+spec:
+  selector:
+    app: stu-pos
+    role: service
+  type: NodePort
+  ports:
+    - name: stu-pos
+      port: 5432
+      targetPort: 5432
+      protocol: TCP

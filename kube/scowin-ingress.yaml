@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: scowin-ingress
+spec:
+    rules:
+      - host: scowin.com
+        http:
+          paths:
+          - path: /students
+            pathType: Prefix
+            backend:
+              service:
+                name: students-backend
+                port:
+                  number: 8000
+          - path: /vaccination
+            pathType: Prefix
+            backend:
+              service:
+                name: vaccination-backend
+                port:
+                  number: 8000

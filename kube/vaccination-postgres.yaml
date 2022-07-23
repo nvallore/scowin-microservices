@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: vac-pos
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 200M
+  hostPath:
+    path: /data/vaccination/postgres
+  storageClassName: standard
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vac-pos
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200M
+  volumeName: vac-pos
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: vac-pos
+  labels:
+    app: vac-pos
+    role: service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vac-pos
+      role: service
+  serviceName: vac-pos
+  template:
+    metadata:
+      labels:
+        app: vac-pos
+        role: service
+    spec:
+      containers:
+        - args:
+            - -p
+            - "5433"
+          env:
+            - name: POSTGRES_DB
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: postgres
+            - name: POSTGRES_USER
+              value: postgres
+          image: postgres
+          name: vac-pos
+          volumeMounts:
+            - name: vac-pos
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: vac-pos
+          persistentVolumeClaim:
+            claimName: vac-pos
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vac-pos
+  labels:
+    app: vac-pos
+    role: service
+spec:
+  selector:
+    app: vac-pos
+    role: service
+  type: NodePort
+  ports:
+    - name: vac-pos
+      port: 5433
+      targetPort: 5433
+      protocol: TCP

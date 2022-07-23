@@ -1,0 +1,47 @@
+###########################
+# Deployment
+###########################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: report-backend
+  labels:
+    app: report-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: report-backend
+  template:
+    metadata:
+      labels:
+        app: report-backend
+    spec:
+      containers:
+      - args:
+            - bash
+            - -c
+            - python main.py
+        name: report-backend
+        image: nvallore/report-backend
+        ports:
+        - containerPort: 8000
+---
+###########################
+# Cluster IP Service
+###########################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: report-backend
+spec:
+  type: NodePort
+  selector:
+    app: report-backend
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+      nodePort: 31003

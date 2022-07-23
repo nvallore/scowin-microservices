@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'vaccination.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': 'vaccination-db',
-        'PORT': 5433,
+        'HOST': os.environ.get('DB_HOST','vaccination-db'),
+        'NAME': os.environ.get('DB_NAME','postgres'),
+        'USER': os.environ.get('DB_USER','postgres'),
+        'PASSWORD': os.environ.get('DB_PASSWORD','postgres'),
+        'PORT': os.environ.get('DB_PORT',5433),
     }
 }
 
