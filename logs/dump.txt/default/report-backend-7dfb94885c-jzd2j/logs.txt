@@ -1,0 +1,14 @@
+==== START logs for container report-backend of pod default/report-backend-7dfb94885c-jzd2j ====
+ * Serving Flask app 'main' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:8003
+ * Running on http://172.17.0.5:8003 (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 354-433-024
+==== END logs for container report-backend of pod default/report-backend-7dfb94885c-jzd2j ====

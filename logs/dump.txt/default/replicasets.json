@@ -1,0 +1,319 @@
+{
+    "kind": "ReplicaSetList",
+    "apiVersion": "apps/v1",
+    "metadata": {
+        "resourceVersion": "1357"
+    },
+    "items": [
+        {
+            "metadata": {
+                "name": "report-backend-7dfb94885c",
+                "namespace": "default",
+                "uid": "f95090ff-e8f8-4e5e-8aaf-cbd4b2bd9604",
+                "resourceVersion": "599",
+                "generation": 1,
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "labels": {
+                    "app": "report-backend",
+                    "pod-template-hash": "7dfb94885c"
+                },
+                "annotations": {
+                    "deployment.kubernetes.io/desired-replicas": "1",
+                    "deployment.kubernetes.io/max-replicas": "2",
+                    "deployment.kubernetes.io/revision": "1"
+                },
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "kind": "Deployment",
+                        "name": "report-backend",
+                        "uid": "14608589-056d-444d-b21c-f2aaf8a71a93",
+                        "controller": true,
+                        "blockOwnerDeletion": true
+                    }
+                ]
+            },
+            "spec": {
+                "replicas": 1,
+                "selector": {
+                    "matchLabels": {
+                        "app": "report-backend",
+                        "pod-template-hash": "7dfb94885c"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "report-backend",
+                            "pod-template-hash": "7dfb94885c"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "report-backend",
+                                "image": "nvallore/report-backend",
+                                "args": [
+                                    "bash",
+                                    "-c",
+                                    "python main.py"
+                                ],
+                                "ports": [
+                                    {
+                                        "containerPort": 8000,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "imagePullPolicy": "Always"
+                            }
+                        ],
+                        "restartPolicy": "Always",
+                        "terminationGracePeriodSeconds": 30,
+                        "dnsPolicy": "ClusterFirst",
+                        "securityContext": {},
+                        "schedulerName": "default-scheduler"
+                    }
+                }
+            },
+            "status": {
+                "replicas": 1,
+                "fullyLabeledReplicas": 1,
+                "readyReplicas": 1,
+                "availableReplicas": 1,
+                "observedGeneration": 1
+            }
+        },
+        {
+            "metadata": {
+                "name": "students-backend-84587689d5",
+                "namespace": "default",
+                "uid": "85528835-c8a7-4d0f-9b0a-8124c0345788",
+                "resourceVersion": "644",
+                "generation": 1,
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "labels": {
+                    "app": "students-backend",
+                    "pod-template-hash": "84587689d5"
+                },
+                "annotations": {
+                    "deployment.kubernetes.io/desired-replicas": "1",
+                    "deployment.kubernetes.io/max-replicas": "2",
+                    "deployment.kubernetes.io/revision": "1"
+                },
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "kind": "Deployment",
+                        "name": "students-backend",
+                        "uid": "7338a8ce-baba-4f22-acf2-05bc179ebcc6",
+                        "controller": true,
+                        "blockOwnerDeletion": true
+                    }
+                ]
+            },
+            "spec": {
+                "replicas": 1,
+                "selector": {
+                    "matchLabels": {
+                        "app": "students-backend",
+                        "pod-template-hash": "84587689d5"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "students-backend",
+                            "pod-template-hash": "84587689d5"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "students-backend",
+                                "image": "nvallore/students-backend",
+                                "args": [
+                                    "bash",
+                                    "-c",
+                                    "python manage.py makemigrations \u0026\u0026 python manage.py migrate \u0026\u0026 python manage.py runserver 0.0.0.0:8000"
+                                ],
+                                "ports": [
+                                    {
+                                        "containerPort": 8000,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "env": [
+                                    {
+                                        "name": "POSTGRES_NAME",
+                                        "value": "postgres"
+                                    },
+                                    {
+                                        "name": "POSTGRES_PASSWORD",
+                                        "value": "postgres"
+                                    },
+                                    {
+                                        "name": "POSTGRES_USER",
+                                        "value": "postgres"
+                                    },
+                                    {
+                                        "name": "POSTGRES_DB",
+                                        "valueFrom": {
+                                            "configMapKeyRef": {
+                                                "name": "app-variables",
+                                                "key": "POSTGRES_DB"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "DB_HOST",
+                                        "valueFrom": {
+                                            "configMapKeyRef": {
+                                                "name": "app-variables",
+                                                "key": "DB_HOST_STUDENT"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "imagePullPolicy": "Always"
+                            }
+                        ],
+                        "restartPolicy": "Always",
+                        "terminationGracePeriodSeconds": 30,
+                        "dnsPolicy": "ClusterFirst",
+                        "securityContext": {},
+                        "schedulerName": "default-scheduler"
+                    }
+                }
+            },
+            "status": {
+                "replicas": 1,
+                "fullyLabeledReplicas": 1,
+                "readyReplicas": 1,
+                "availableReplicas": 1,
+                "observedGeneration": 1
+            }
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend-68477f7b6b",
+                "namespace": "default",
+                "uid": "9208b25b-03f8-432e-ad05-fc1a436bcf2f",
+                "resourceVersion": "655",
+                "generation": 1,
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "labels": {
+                    "app": "vaccination-backend",
+                    "pod-template-hash": "68477f7b6b"
+                },
+                "annotations": {
+                    "deployment.kubernetes.io/desired-replicas": "1",
+                    "deployment.kubernetes.io/max-replicas": "2",
+                    "deployment.kubernetes.io/revision": "1"
+                },
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "kind": "Deployment",
+                        "name": "vaccination-backend",
+                        "uid": "c00ac924-c87b-4917-b09a-c3619211bdff",
+                        "controller": true,
+                        "blockOwnerDeletion": true
+                    }
+                ]
+            },
+            "spec": {
+                "replicas": 1,
+                "selector": {
+                    "matchLabels": {
+                        "app": "vaccination-backend",
+                        "pod-template-hash": "68477f7b6b"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "vaccination-backend",
+                            "pod-template-hash": "68477f7b6b"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "vaccination-backend",
+                                "image": "nvallore/vaccination-backend",
+                                "args": [
+                                    "bash",
+                                    "-c",
+                                    "python manage.py makemigrations \u0026\u0026 python manage.py migrate \u0026\u0026 python manage.py runserver 0.0.0.0:8000"
+                                ],
+                                "ports": [
+                                    {
+                                        "containerPort": 8000,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "env": [
+                                    {
+                                        "name": "POSTGRES_NAME",
+                                        "value": "postgres"
+                                    },
+                                    {
+                                        "name": "POSTGRES_PASSWORD",
+                                        "value": "postgres"
+                                    },
+                                    {
+                                        "name": "POSTGRES_USER",
+                                        "value": "postgres"
+                                    },
+                                    {
+                                        "name": "POSTGRES_DB",
+                                        "valueFrom": {
+                                            "configMapKeyRef": {
+                                                "name": "app-variables",
+                                                "key": "POSTGRES_DB"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "DB_HOST",
+                                        "valueFrom": {
+                                            "configMapKeyRef": {
+                                                "name": "app-variables",
+                                                "key": "DB_HOST_VACCINATION"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "imagePullPolicy": "Always"
+                            }
+                        ],
+                        "restartPolicy": "Always",
+                        "terminationGracePeriodSeconds": 30,
+                        "dnsPolicy": "ClusterFirst",
+                        "securityContext": {},
+                        "schedulerName": "default-scheduler"
+                    }
+                }
+            },
+            "status": {
+                "replicas": 1,
+                "fullyLabeledReplicas": 1,
+                "readyReplicas": 1,
+                "availableReplicas": 1,
+                "observedGeneration": 1
+            }
+        }
+    ]
+}

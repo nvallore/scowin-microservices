@@ -1,0 +1,143 @@
+{
+    "kind": "DaemonSetList",
+    "apiVersion": "apps/v1",
+    "metadata": {
+        "resourceVersion": "1356"
+    },
+    "items": [
+        {
+            "metadata": {
+                "name": "kube-proxy",
+                "namespace": "kube-system",
+                "uid": "b9db664d-64f0-4a3c-9c83-a811ddfed72c",
+                "resourceVersion": "366",
+                "generation": 1,
+                "creationTimestamp": "2022-07-25T14:59:55Z",
+                "labels": {
+                    "k8s-app": "kube-proxy"
+                },
+                "annotations": {
+                    "deprecated.daemonset.template.generation": "1"
+                }
+            },
+            "spec": {
+                "selector": {
+                    "matchLabels": {
+                        "k8s-app": "kube-proxy"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "k8s-app": "kube-proxy"
+                        }
+                    },
+                    "spec": {
+                        "volumes": [
+                            {
+                                "name": "kube-proxy",
+                                "configMap": {
+                                    "name": "kube-proxy",
+                                    "defaultMode": 420
+                                }
+                            },
+                            {
+                                "name": "xtables-lock",
+                                "hostPath": {
+                                    "path": "/run/xtables.lock",
+                                    "type": "FileOrCreate"
+                                }
+                            },
+                            {
+                                "name": "lib-modules",
+                                "hostPath": {
+                                    "path": "/lib/modules",
+                                    "type": ""
+                                }
+                            }
+                        ],
+                        "containers": [
+                            {
+                                "name": "kube-proxy",
+                                "image": "k8s.gcr.io/kube-proxy:v1.24.1",
+                                "command": [
+                                    "/usr/local/bin/kube-proxy",
+                                    "--config=/var/lib/kube-proxy/config.conf",
+                                    "--hostname-override=$(NODE_NAME)"
+                                ],
+                                "env": [
+                                    {
+                                        "name": "NODE_NAME",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "spec.nodeName"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "resources": {},
+                                "volumeMounts": [
+                                    {
+                                        "name": "kube-proxy",
+                                        "mountPath": "/var/lib/kube-proxy"
+                                    },
+                                    {
+                                        "name": "xtables-lock",
+                                        "mountPath": "/run/xtables.lock"
+                                    },
+                                    {
+                                        "name": "lib-modules",
+                                        "readOnly": true,
+                                        "mountPath": "/lib/modules"
+                                    }
+                                ],
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "imagePullPolicy": "IfNotPresent",
+                                "securityContext": {
+                                    "privileged": true
+                                }
+                            }
+                        ],
+                        "restartPolicy": "Always",
+                        "terminationGracePeriodSeconds": 30,
+                        "dnsPolicy": "ClusterFirst",
+                        "nodeSelector": {
+                            "kubernetes.io/os": "linux"
+                        },
+                        "serviceAccountName": "kube-proxy",
+                        "serviceAccount": "kube-proxy",
+                        "hostNetwork": true,
+                        "securityContext": {},
+                        "schedulerName": "default-scheduler",
+                        "tolerations": [
+                            {
+                                "operator": "Exists"
+                            }
+                        ],
+                        "priorityClassName": "system-node-critical"
+                    }
+                },
+                "updateStrategy": {
+                    "type": "RollingUpdate",
+                    "rollingUpdate": {
+                        "maxUnavailable": 1,
+                        "maxSurge": 0
+                    }
+                },
+                "revisionHistoryLimit": 10
+            },
+            "status": {
+                "currentNumberScheduled": 1,
+                "numberMisscheduled": 0,
+                "desiredNumberScheduled": 1,
+                "numberReady": 1,
+                "observedGeneration": 1,
+                "updatedNumberScheduled": 1,
+                "numberAvailable": 1
+            }
+        }
+    ]
+}

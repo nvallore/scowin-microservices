@@ -1,0 +1,9 @@
+==== START logs for container storage-provisioner of pod kube-system/storage-provisioner ====
+I0725 15:00:39.867813       1 storage_provisioner.go:116] Initializing the minikube storage provisioner...
+I0725 15:00:39.879019       1 storage_provisioner.go:141] Storage provisioner initialized, now starting service!
+I0725 15:00:39.879071       1 leaderelection.go:243] attempting to acquire leader lease kube-system/k8s.io-minikube-hostpath...
+I0725 15:00:39.897455       1 leaderelection.go:253] successfully acquired lease kube-system/k8s.io-minikube-hostpath
+I0725 15:00:39.897561       1 event.go:282] Event(v1.ObjectReference{Kind:"Endpoints", Namespace:"kube-system", Name:"k8s.io-minikube-hostpath", UID:"30c7003c-c3dd-4b57-9752-ebf3be6bdc2a", APIVersion:"v1", ResourceVersion:"491", FieldPath:""}): type: 'Normal' reason: 'LeaderElection' minikube_80e06afb-e73c-4699-bdd7-429cf2b85da5 became leader
+I0725 15:00:39.897610       1 controller.go:835] Starting provisioner controller k8s.io/minikube-hostpath_minikube_80e06afb-e73c-4699-bdd7-429cf2b85da5!
+I0725 15:00:39.998173       1 controller.go:884] Started provisioner controller k8s.io/minikube-hostpath_minikube_80e06afb-e73c-4699-bdd7-429cf2b85da5!
+==== END logs for container storage-provisioner of pod kube-system/storage-provisioner ====

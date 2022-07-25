@@ -1,0 +1,258 @@
+{
+    "kind": "ServiceList",
+    "apiVersion": "v1",
+    "metadata": {
+        "resourceVersion": "1357"
+    },
+    "items": [
+        {
+            "metadata": {
+                "name": "kubernetes",
+                "namespace": "default",
+                "uid": "fa4bbc52-87cf-41ae-840a-c0917f250f3c",
+                "resourceVersion": "199",
+                "creationTimestamp": "2022-07-25T14:59:54Z",
+                "labels": {
+                    "component": "apiserver",
+                    "provider": "kubernetes"
+                }
+            },
+            "spec": {
+                "ports": [
+                    {
+                        "name": "https",
+                        "protocol": "TCP",
+                        "port": 443,
+                        "targetPort": 8443
+                    }
+                ],
+                "clusterIP": "10.96.0.1",
+                "clusterIPs": [
+                    "10.96.0.1"
+                ],
+                "type": "ClusterIP",
+                "sessionAffinity": "None",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "internalTrafficPolicy": "Cluster"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "metadata": {
+                "name": "report-backend",
+                "namespace": "default",
+                "uid": "ddc7fe12-256d-4086-aabb-9bb7fd161274",
+                "resourceVersion": "380",
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"report-backend\",\"namespace\":\"default\"},\"spec\":{\"ports\":[{\"nodePort\":31003,\"port\":8000,\"protocol\":\"TCP\",\"targetPort\":8000}],\"selector\":{\"app\":\"report-backend\"},\"type\":\"NodePort\"}}\n"
+                }
+            },
+            "spec": {
+                "ports": [
+                    {
+                        "protocol": "TCP",
+                        "port": 8000,
+                        "targetPort": 8000,
+                        "nodePort": 31003
+                    }
+                ],
+                "selector": {
+                    "app": "report-backend"
+                },
+                "clusterIP": "10.104.214.31",
+                "clusterIPs": [
+                    "10.104.214.31"
+                ],
+                "type": "NodePort",
+                "sessionAffinity": "None",
+                "externalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "internalTrafficPolicy": "Cluster"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "metadata": {
+                "name": "stu-pos",
+                "namespace": "default",
+                "uid": "3744ea6d-b129-4fbb-991d-298a19e805dc",
+                "resourceVersion": "418",
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "labels": {
+                    "app": "stu-pos",
+                    "role": "service"
+                },
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"stu-pos\",\"role\":\"service\"},\"name\":\"stu-pos\",\"namespace\":\"default\"},\"spec\":{\"ports\":[{\"name\":\"stu-pos\",\"port\":5432,\"protocol\":\"TCP\",\"targetPort\":5432}],\"selector\":{\"app\":\"stu-pos\",\"role\":\"service\"},\"type\":\"NodePort\"}}\n"
+                }
+            },
+            "spec": {
+                "ports": [
+                    {
+                        "name": "stu-pos",
+                        "protocol": "TCP",
+                        "port": 5432,
+                        "targetPort": 5432,
+                        "nodePort": 30389
+                    }
+                ],
+                "selector": {
+                    "app": "stu-pos",
+                    "role": "service"
+                },
+                "clusterIP": "10.100.31.165",
+                "clusterIPs": [
+                    "10.100.31.165"
+                ],
+                "type": "NodePort",
+                "sessionAffinity": "None",
+                "externalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "internalTrafficPolicy": "Cluster"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "metadata": {
+                "name": "students-backend",
+                "namespace": "default",
+                "uid": "920c0d4e-dd81-42b7-9d5e-d5d3e021df17",
+                "resourceVersion": "404",
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"students-backend\",\"namespace\":\"default\"},\"spec\":{\"ports\":[{\"nodePort\":31000,\"port\":8000,\"protocol\":\"TCP\",\"targetPort\":8000}],\"selector\":{\"app\":\"students-backend\"},\"type\":\"NodePort\"}}\n"
+                }
+            },
+            "spec": {
+                "ports": [
+                    {
+                        "protocol": "TCP",
+                        "port": 8000,
+                        "targetPort": 8000,
+                        "nodePort": 31000
+                    }
+                ],
+                "selector": {
+                    "app": "students-backend"
+                },
+                "clusterIP": "10.99.208.78",
+                "clusterIPs": [
+                    "10.99.208.78"
+                ],
+                "type": "NodePort",
+                "sessionAffinity": "None",
+                "externalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "internalTrafficPolicy": "Cluster"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "metadata": {
+                "name": "vac-pos",
+                "namespace": "default",
+                "uid": "6aaa8f54-7213-4a43-a706-73bf9f7322e2",
+                "resourceVersion": "459",
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "labels": {
+                    "app": "vac-pos",
+                    "role": "service"
+                },
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"vac-pos\",\"role\":\"service\"},\"name\":\"vac-pos\",\"namespace\":\"default\"},\"spec\":{\"ports\":[{\"name\":\"vac-pos\",\"port\":5433,\"protocol\":\"TCP\",\"targetPort\":5433}],\"selector\":{\"app\":\"vac-pos\",\"role\":\"service\"},\"type\":\"NodePort\"}}\n"
+                }
+            },
+            "spec": {
+                "ports": [
+                    {
+                        "name": "vac-pos",
+                        "protocol": "TCP",
+                        "port": 5433,
+                        "targetPort": 5433,
+                        "nodePort": 32653
+                    }
+                ],
+                "selector": {
+                    "app": "vac-pos",
+                    "role": "service"
+                },
+                "clusterIP": "10.97.37.209",
+                "clusterIPs": [
+                    "10.97.37.209"
+                ],
+                "type": "NodePort",
+                "sessionAffinity": "None",
+                "externalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "internalTrafficPolicy": "Cluster"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend",
+                "namespace": "default",
+                "uid": "b1d562f7-0d88-4b1b-957c-8c801c3e9c3c",
+                "resourceVersion": "434",
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"vaccination-backend\",\"namespace\":\"default\"},\"spec\":{\"ports\":[{\"nodePort\":31002,\"port\":8000,\"protocol\":\"TCP\",\"targetPort\":8000}],\"selector\":{\"app\":\"vaccination-backend\"},\"type\":\"NodePort\"}}\n"
+                }
+            },
+            "spec": {
+                "ports": [
+                    {
+                        "protocol": "TCP",
+                        "port": 8000,
+                        "targetPort": 8000,
+                        "nodePort": 31002
+                    }
+                ],
+                "selector": {
+                    "app": "vaccination-backend"
+                },
+                "clusterIP": "10.97.129.235",
+                "clusterIPs": [
+                    "10.97.129.235"
+                ],
+                "type": "NodePort",
+                "sessionAffinity": "None",
+                "externalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "internalTrafficPolicy": "Cluster"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        }
+    ]
+}

@@ -1,0 +1,1338 @@
+{
+    "kind": "EventList",
+    "apiVersion": "v1",
+    "metadata": {
+        "resourceVersion": "1357"
+    },
+    "items": [
+        {
+            "metadata": {
+                "name": "minikube.17051a84e1fcae4d",
+                "namespace": "default",
+                "uid": "f83624f9-31b0-43f4-bef2-5c8dca2ccf6c",
+                "resourceVersion": "238",
+                "creationTimestamp": "2022-07-25T14:59:55Z"
+            },
+            "involvedObject": {
+                "kind": "Node",
+                "name": "minikube",
+                "uid": "minikube"
+            },
+            "reason": "Starting",
+            "message": "Starting kubelet.",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T14:59:55Z",
+            "lastTimestamp": "2022-07-25T14:59:55Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "minikube.17051a84ec723b8a",
+                "namespace": "default",
+                "uid": "dddfe1fa-74e1-4d76-88c3-bbfbe86d7c0e",
+                "resourceVersion": "241",
+                "creationTimestamp": "2022-07-25T14:59:55Z"
+            },
+            "involvedObject": {
+                "kind": "Node",
+                "name": "minikube",
+                "uid": "minikube"
+            },
+            "reason": "NodeHasSufficientMemory",
+            "message": "Node minikube status is now: NodeHasSufficientMemory",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T14:59:55Z",
+            "lastTimestamp": "2022-07-25T14:59:55Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "minikube.17051a84ec726ac4",
+                "namespace": "default",
+                "uid": "c64475cd-a046-4ae9-b7b1-675603f4b550",
+                "resourceVersion": "242",
+                "creationTimestamp": "2022-07-25T14:59:55Z"
+            },
+            "involvedObject": {
+                "kind": "Node",
+                "name": "minikube",
+                "uid": "minikube"
+            },
+            "reason": "NodeHasNoDiskPressure",
+            "message": "Node minikube status is now: NodeHasNoDiskPressure",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T14:59:55Z",
+            "lastTimestamp": "2022-07-25T14:59:55Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "minikube.17051a84ec72783b",
+                "namespace": "default",
+                "uid": "99dfb96e-3028-4824-8e66-7484fec0b88f",
+                "resourceVersion": "243",
+                "creationTimestamp": "2022-07-25T14:59:55Z"
+            },
+            "involvedObject": {
+                "kind": "Node",
+                "name": "minikube",
+                "uid": "minikube"
+            },
+            "reason": "NodeHasSufficientPID",
+            "message": "Node minikube status is now: NodeHasSufficientPID",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T14:59:55Z",
+            "lastTimestamp": "2022-07-25T14:59:55Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "minikube.17051a84edcc53a1",
+                "namespace": "default",
+                "uid": "0e7c6232-3be5-48cf-96bb-f27f1a0e7479",
+                "resourceVersion": "245",
+                "creationTimestamp": "2022-07-25T14:59:56Z"
+            },
+            "involvedObject": {
+                "kind": "Node",
+                "name": "minikube",
+                "uid": "minikube"
+            },
+            "reason": "NodeReady",
+            "message": "Node minikube status is now: NodeReady",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T14:59:55Z",
+            "lastTimestamp": "2022-07-25T14:59:55Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "minikube.17051a84f1b5394b",
+                "namespace": "default",
+                "uid": "09bfce04-f7a9-4d85-9066-03f937a59bfa",
+                "resourceVersion": "246",
+                "creationTimestamp": "2022-07-25T14:59:56Z"
+            },
+            "involvedObject": {
+                "kind": "Node",
+                "name": "minikube",
+                "uid": "minikube"
+            },
+            "reason": "NodeAllocatableEnforced",
+            "message": "Updated Node Allocatable limit across pods",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T14:59:56Z",
+            "lastTimestamp": "2022-07-25T14:59:56Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "minikube.17051a87dd915d2c",
+                "namespace": "default",
+                "uid": "9ed63d5d-81fd-41dc-a34e-513cb2d2b6ed",
+                "resourceVersion": "305",
+                "creationTimestamp": "2022-07-25T15:00:08Z"
+            },
+            "involvedObject": {
+                "kind": "Node",
+                "name": "minikube",
+                "uid": "2f71ae91-4adf-4df1-90d9-8ecbb15f42fc",
+                "apiVersion": "v1"
+            },
+            "reason": "RegisteredNode",
+            "message": "Node minikube event: Registered Node minikube in Controller",
+            "source": {
+                "component": "node-controller"
+            },
+            "firstTimestamp": "2022-07-25T15:00:08Z",
+            "lastTimestamp": "2022-07-25T15:00:08Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "minikube.17051a882b7d055f",
+                "namespace": "default",
+                "uid": "537cfd1e-72c6-4adf-9324-6a1a32b4fac6",
+                "resourceVersion": "356",
+                "creationTimestamp": "2022-07-25T15:00:09Z"
+            },
+            "involvedObject": {
+                "kind": "Node",
+                "name": "minikube",
+                "uid": "minikube"
+            },
+            "reason": "Starting",
+            "source": {},
+            "firstTimestamp": null,
+            "lastTimestamp": null,
+            "type": "Normal",
+            "eventTime": "2022-07-25T15:00:09.903383Z",
+            "action": "StartKubeProxy",
+            "reportingComponent": "kube-proxy",
+            "reportingInstance": "kube-proxy-minikube"
+        },
+        {
+            "metadata": {
+                "name": "report-backend-7dfb94885c-jzd2j.17051a88c4788cd5",
+                "namespace": "default",
+                "uid": "d8e2de4d-ff40-4bea-900b-b2aba0f6a41f",
+                "resourceVersion": "387",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "report-backend-7dfb94885c-jzd2j",
+                "uid": "e10b618b-54a6-4492-9387-dd2eca1e2b10",
+                "apiVersion": "v1",
+                "resourceVersion": "379"
+            },
+            "reason": "Scheduled",
+            "message": "Successfully assigned default/report-backend-7dfb94885c-jzd2j to minikube",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "report-backend-7dfb94885c-jzd2j.17051a88f9c8042e",
+                "namespace": "default",
+                "uid": "5ac6043b-6c04-4cc8-8873-6df4a880f2e6",
+                "resourceVersion": "464",
+                "creationTimestamp": "2022-07-25T15:00:13Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "report-backend-7dfb94885c-jzd2j",
+                "uid": "e10b618b-54a6-4492-9387-dd2eca1e2b10",
+                "apiVersion": "v1",
+                "resourceVersion": "385",
+                "fieldPath": "spec.containers{report-backend}"
+            },
+            "reason": "Pulling",
+            "message": "Pulling image \"nvallore/report-backend\"",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:00:13Z",
+            "lastTimestamp": "2022-07-25T15:00:13Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "report-backend-7dfb94885c-jzd2j.17051aa55514cd58",
+                "namespace": "default",
+                "uid": "471207d1-4f4c-4a74-8779-96d75c0c27f4",
+                "resourceVersion": "593",
+                "creationTimestamp": "2022-07-25T15:02:15Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "report-backend-7dfb94885c-jzd2j",
+                "uid": "e10b618b-54a6-4492-9387-dd2eca1e2b10",
+                "apiVersion": "v1",
+                "resourceVersion": "385",
+                "fieldPath": "spec.containers{report-backend}"
+            },
+            "reason": "Pulled",
+            "message": "Successfully pulled image \"nvallore/report-backend\" in 2m1.874928736s",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:15Z",
+            "lastTimestamp": "2022-07-25T15:02:15Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "report-backend-7dfb94885c-jzd2j.17051aa58396ebc1",
+                "namespace": "default",
+                "uid": "4e8a4db8-c9f7-43a9-9886-0d7eefe18a12",
+                "resourceVersion": "594",
+                "creationTimestamp": "2022-07-25T15:02:15Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "report-backend-7dfb94885c-jzd2j",
+                "uid": "e10b618b-54a6-4492-9387-dd2eca1e2b10",
+                "apiVersion": "v1",
+                "resourceVersion": "385",
+                "fieldPath": "spec.containers{report-backend}"
+            },
+            "reason": "Created",
+            "message": "Created container report-backend",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:15Z",
+            "lastTimestamp": "2022-07-25T15:02:15Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "report-backend-7dfb94885c-jzd2j.17051aa588dd54e6",
+                "namespace": "default",
+                "uid": "85ee8130-5bd3-4122-9d24-3316df80a6de",
+                "resourceVersion": "595",
+                "creationTimestamp": "2022-07-25T15:02:16Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "report-backend-7dfb94885c-jzd2j",
+                "uid": "e10b618b-54a6-4492-9387-dd2eca1e2b10",
+                "apiVersion": "v1",
+                "resourceVersion": "385",
+                "fieldPath": "spec.containers{report-backend}"
+            },
+            "reason": "Started",
+            "message": "Started container report-backend",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:16Z",
+            "lastTimestamp": "2022-07-25T15:02:16Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "report-backend-7dfb94885c.17051a88c420fd6f",
+                "namespace": "default",
+                "uid": "39b40bc5-ba5e-4cd1-aadf-a7d401437c23",
+                "resourceVersion": "382",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "ReplicaSet",
+                "namespace": "default",
+                "name": "report-backend-7dfb94885c",
+                "uid": "f95090ff-e8f8-4e5e-8aaf-cbd4b2bd9604",
+                "apiVersion": "apps/v1",
+                "resourceVersion": "374"
+            },
+            "reason": "SuccessfulCreate",
+            "message": "Created pod: report-backend-7dfb94885c-jzd2j",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "report-backend.17051a88c3b21284",
+                "namespace": "default",
+                "uid": "3e1d04d2-9300-4fa2-b2b0-2cf5f2883824",
+                "resourceVersion": "375",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "Deployment",
+                "namespace": "default",
+                "name": "report-backend",
+                "uid": "14608589-056d-444d-b21c-f2aaf8a71a93",
+                "apiVersion": "apps/v1",
+                "resourceVersion": "373"
+            },
+            "reason": "ScalingReplicaSet",
+            "message": "Scaled up replica set report-backend-7dfb94885c to 1",
+            "source": {
+                "component": "deployment-controller"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "stu-pos-0.17051a88cee9f352",
+                "namespace": "default",
+                "uid": "ab626bc7-41d0-4bb5-bb8d-dd9554ab832c",
+                "resourceVersion": "486",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "stu-pos-0",
+                "uid": "d8d9bb35-82bc-4faf-8866-db8f40588db7",
+                "apiVersion": "v1",
+                "resourceVersion": "421"
+            },
+            "reason": "FailedScheduling",
+            "message": "0/1 nodes are available: 1 pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:38Z",
+            "count": 5,
+            "type": "Warning",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "stu-pos-0.17051a91377ff40d",
+                "namespace": "default",
+                "uid": "1b7c4e7c-2e43-4bbb-b306-7fa8f57fdde7",
+                "resourceVersion": "501",
+                "creationTimestamp": "2022-07-25T15:00:48Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "stu-pos-0",
+                "uid": "d8d9bb35-82bc-4faf-8866-db8f40588db7",
+                "apiVersion": "v1",
+                "resourceVersion": "428"
+            },
+            "reason": "Scheduled",
+            "message": "Successfully assigned default/stu-pos-0 to minikube",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "firstTimestamp": "2022-07-25T15:00:48Z",
+            "lastTimestamp": "2022-07-25T15:00:48Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "stu-pos-0.17051a916d9040f2",
+                "namespace": "default",
+                "uid": "299067b8-57a5-4c69-adca-ca722b0e96a1",
+                "resourceVersion": "503",
+                "creationTimestamp": "2022-07-25T15:00:49Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "stu-pos-0",
+                "uid": "d8d9bb35-82bc-4faf-8866-db8f40588db7",
+                "apiVersion": "v1",
+                "resourceVersion": "500",
+                "fieldPath": "spec.containers{stu-pos}"
+            },
+            "reason": "Pulling",
+            "message": "Pulling image \"postgres\"",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:00:49Z",
+            "lastTimestamp": "2022-07-25T15:00:49Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "stu-pos-0.17051aac26e1349a",
+                "namespace": "default",
+                "uid": "eb44a02c-3244-4d2f-ba04-3c12d4652b63",
+                "resourceVersion": "629",
+                "creationTimestamp": "2022-07-25T15:02:44Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "stu-pos-0",
+                "uid": "d8d9bb35-82bc-4faf-8866-db8f40588db7",
+                "apiVersion": "v1",
+                "resourceVersion": "500",
+                "fieldPath": "spec.containers{stu-pos}"
+            },
+            "reason": "Pulled",
+            "message": "Successfully pulled image \"postgres\" in 1m54.862240623s",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:44Z",
+            "lastTimestamp": "2022-07-25T15:02:44Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "stu-pos-0.17051aac28c69c94",
+                "namespace": "default",
+                "uid": "51f60e24-49d7-4a28-9826-c4c893f0c586",
+                "resourceVersion": "630",
+                "creationTimestamp": "2022-07-25T15:02:44Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "stu-pos-0",
+                "uid": "d8d9bb35-82bc-4faf-8866-db8f40588db7",
+                "apiVersion": "v1",
+                "resourceVersion": "500",
+                "fieldPath": "spec.containers{stu-pos}"
+            },
+            "reason": "Created",
+            "message": "Created container stu-pos",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:44Z",
+            "lastTimestamp": "2022-07-25T15:02:44Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "stu-pos-0.17051aac2df4fca9",
+                "namespace": "default",
+                "uid": "0013fb25-634a-4e32-8763-a65c821b25ab",
+                "resourceVersion": "631",
+                "creationTimestamp": "2022-07-25T15:02:44Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "stu-pos-0",
+                "uid": "d8d9bb35-82bc-4faf-8866-db8f40588db7",
+                "apiVersion": "v1",
+                "resourceVersion": "500",
+                "fieldPath": "spec.containers{stu-pos}"
+            },
+            "reason": "Started",
+            "message": "Started container stu-pos",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:44Z",
+            "lastTimestamp": "2022-07-25T15:02:44Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "stu-pos.17051a88cef4f293",
+                "namespace": "default",
+                "uid": "4f4a1327-09f7-424e-8084-63b644de528c",
+                "resourceVersion": "426",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "StatefulSet",
+                "namespace": "default",
+                "name": "stu-pos",
+                "uid": "8351962a-03b0-478e-a6d2-6ea182f223c9",
+                "apiVersion": "apps/v1",
+                "resourceVersion": "414"
+            },
+            "reason": "SuccessfulCreate",
+            "message": "create Pod stu-pos-0 in StatefulSet stu-pos successful",
+            "source": {
+                "component": "statefulset-controller"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "students-backend-84587689d5-8sr4x.17051a88c84cb6bc",
+                "namespace": "default",
+                "uid": "0091c55a-b53d-4ca6-b207-3ed9622772dc",
+                "resourceVersion": "402",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "students-backend-84587689d5-8sr4x",
+                "uid": "61d388ea-cb28-4cc9-b909-954e6b8939e1",
+                "apiVersion": "v1",
+                "resourceVersion": "396"
+            },
+            "reason": "Scheduled",
+            "message": "Successfully assigned default/students-backend-84587689d5-8sr4x to minikube",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "students-backend-84587689d5-8sr4x.17051a88ea887474",
+                "namespace": "default",
+                "uid": "0274db5b-c3e8-4a87-9390-8a2dca873459",
+                "resourceVersion": "528",
+                "creationTimestamp": "2022-07-25T15:00:13Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "students-backend-84587689d5-8sr4x",
+                "uid": "61d388ea-cb28-4cc9-b909-954e6b8939e1",
+                "apiVersion": "v1",
+                "resourceVersion": "399",
+                "fieldPath": "spec.containers{students-backend}"
+            },
+            "reason": "Pulling",
+            "message": "Pulling image \"nvallore/students-backend\"",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:00:13Z",
+            "lastTimestamp": "2022-07-25T15:01:13Z",
+            "count": 2,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "students-backend-84587689d5-8sr4x.17051a96498d56c5",
+                "namespace": "default",
+                "uid": "b4117d59-2797-4258-8e97-8d84dfb5b128",
+                "resourceVersion": "519",
+                "creationTimestamp": "2022-07-25T15:01:10Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "students-backend-84587689d5-8sr4x",
+                "uid": "61d388ea-cb28-4cc9-b909-954e6b8939e1",
+                "apiVersion": "v1",
+                "resourceVersion": "399",
+                "fieldPath": "spec.containers{students-backend}"
+            },
+            "reason": "Pulled",
+            "message": "Successfully pulled image \"nvallore/students-backend\" in 57.470612713s",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:01:10Z",
+            "lastTimestamp": "2022-07-25T15:01:10Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "students-backend-84587689d5-8sr4x.17051a96659cf56c",
+                "namespace": "default",
+                "uid": "7b608856-7007-44b5-a23a-aac01003f77e",
+                "resourceVersion": "639",
+                "creationTimestamp": "2022-07-25T15:01:11Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "students-backend-84587689d5-8sr4x",
+                "uid": "61d388ea-cb28-4cc9-b909-954e6b8939e1",
+                "apiVersion": "v1",
+                "resourceVersion": "399",
+                "fieldPath": "spec.containers{students-backend}"
+            },
+            "reason": "Created",
+            "message": "Created container students-backend",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:01:11Z",
+            "lastTimestamp": "2022-07-25T15:02:47Z",
+            "count": 2,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "students-backend-84587689d5-8sr4x.17051a9669f80976",
+                "namespace": "default",
+                "uid": "26e4c97a-67f2-4451-9322-3839b39101af",
+                "resourceVersion": "640",
+                "creationTimestamp": "2022-07-25T15:01:11Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "students-backend-84587689d5-8sr4x",
+                "uid": "61d388ea-cb28-4cc9-b909-954e6b8939e1",
+                "apiVersion": "v1",
+                "resourceVersion": "399",
+                "fieldPath": "spec.containers{students-backend}"
+            },
+            "reason": "Started",
+            "message": "Started container students-backend",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:01:11Z",
+            "lastTimestamp": "2022-07-25T15:02:47Z",
+            "count": 2,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "students-backend-84587689d5-8sr4x.17051aaccdd0674b",
+                "namespace": "default",
+                "uid": "8c835811-49ca-4f5c-832c-b7074e23f6f7",
+                "resourceVersion": "638",
+                "creationTimestamp": "2022-07-25T15:02:47Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "students-backend-84587689d5-8sr4x",
+                "uid": "61d388ea-cb28-4cc9-b909-954e6b8939e1",
+                "apiVersion": "v1",
+                "resourceVersion": "399",
+                "fieldPath": "spec.containers{students-backend}"
+            },
+            "reason": "Pulled",
+            "message": "Successfully pulled image \"nvallore/students-backend\" in 1m34.198739495s",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:47Z",
+            "lastTimestamp": "2022-07-25T15:02:47Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "students-backend-84587689d5.17051a88c81f0687",
+                "namespace": "default",
+                "uid": "fc8c152b-26cc-4eac-8226-7098492bb5ba",
+                "resourceVersion": "398",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "ReplicaSet",
+                "namespace": "default",
+                "name": "students-backend-84587689d5",
+                "uid": "85528835-c8a7-4d0f-9b0a-8124c0345788",
+                "apiVersion": "apps/v1",
+                "resourceVersion": "394"
+            },
+            "reason": "SuccessfulCreate",
+            "message": "Created pod: students-backend-84587689d5-8sr4x",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "students-backend.17051a88c7e9f174",
+                "namespace": "default",
+                "uid": "6c149d02-e843-4490-8d27-57020a098f1a",
+                "resourceVersion": "395",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "Deployment",
+                "namespace": "default",
+                "name": "students-backend",
+                "uid": "7338a8ce-baba-4f22-acf2-05bc179ebcc6",
+                "apiVersion": "apps/v1",
+                "resourceVersion": "393"
+            },
+            "reason": "ScalingReplicaSet",
+            "message": "Scaled up replica set students-backend-84587689d5 to 1",
+            "source": {
+                "component": "deployment-controller"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vac-pos-0.17051a88d59f77af",
+                "namespace": "default",
+                "uid": "1e2fb368-ff7c-40e2-b66d-51d43ad2a5a3",
+                "resourceVersion": "471",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vac-pos-0",
+                "uid": "3a36a65f-fa0e-4a95-a45e-ff2d279a15f6",
+                "apiVersion": "v1",
+                "resourceVersion": "452"
+            },
+            "reason": "FailedScheduling",
+            "message": "0/1 nodes are available: 1 pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:23Z",
+            "count": 2,
+            "type": "Warning",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vac-pos-0.17051a8bdce33e61",
+                "namespace": "default",
+                "uid": "9dac9182-684a-4c3a-8593-1affa96075fa",
+                "resourceVersion": "477",
+                "creationTimestamp": "2022-07-25T15:00:25Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vac-pos-0",
+                "uid": "3a36a65f-fa0e-4a95-a45e-ff2d279a15f6",
+                "apiVersion": "v1",
+                "resourceVersion": "458"
+            },
+            "reason": "Scheduled",
+            "message": "Successfully assigned default/vac-pos-0 to minikube",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "firstTimestamp": "2022-07-25T15:00:25Z",
+            "lastTimestamp": "2022-07-25T15:00:25Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vac-pos-0.17051a8c1239f297",
+                "namespace": "default",
+                "uid": "38405bd0-e4d0-4344-b772-1c0d5bc8a8e2",
+                "resourceVersion": "480",
+                "creationTimestamp": "2022-07-25T15:00:26Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vac-pos-0",
+                "uid": "3a36a65f-fa0e-4a95-a45e-ff2d279a15f6",
+                "apiVersion": "v1",
+                "resourceVersion": "476",
+                "fieldPath": "spec.containers{vac-pos}"
+            },
+            "reason": "Pulling",
+            "message": "Pulling image \"postgres\"",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:00:26Z",
+            "lastTimestamp": "2022-07-25T15:00:26Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vac-pos-0.17051aab7cef15f7",
+                "namespace": "default",
+                "uid": "75a763a5-2b8b-4c9e-bc87-933bcf2d16cf",
+                "resourceVersion": "620",
+                "creationTimestamp": "2022-07-25T15:02:41Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vac-pos-0",
+                "uid": "3a36a65f-fa0e-4a95-a45e-ff2d279a15f6",
+                "apiVersion": "v1",
+                "resourceVersion": "476",
+                "fieldPath": "spec.containers{vac-pos}"
+            },
+            "reason": "Pulled",
+            "message": "Successfully pulled image \"postgres\" in 2m15.039212688s",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:41Z",
+            "lastTimestamp": "2022-07-25T15:02:41Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vac-pos-0.17051aab9f68f90a",
+                "namespace": "default",
+                "uid": "981f9d1c-54d4-4b24-a74a-c4802587086d",
+                "resourceVersion": "621",
+                "creationTimestamp": "2022-07-25T15:02:42Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vac-pos-0",
+                "uid": "3a36a65f-fa0e-4a95-a45e-ff2d279a15f6",
+                "apiVersion": "v1",
+                "resourceVersion": "476",
+                "fieldPath": "spec.containers{vac-pos}"
+            },
+            "reason": "Created",
+            "message": "Created container vac-pos",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:42Z",
+            "lastTimestamp": "2022-07-25T15:02:42Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vac-pos-0.17051aaba486a25a",
+                "namespace": "default",
+                "uid": "76907083-cc53-4fa6-8909-8a37820e3e40",
+                "resourceVersion": "622",
+                "creationTimestamp": "2022-07-25T15:02:42Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vac-pos-0",
+                "uid": "3a36a65f-fa0e-4a95-a45e-ff2d279a15f6",
+                "apiVersion": "v1",
+                "resourceVersion": "476",
+                "fieldPath": "spec.containers{vac-pos}"
+            },
+            "reason": "Started",
+            "message": "Started container vac-pos",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:42Z",
+            "lastTimestamp": "2022-07-25T15:02:42Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vac-pos.17051a88d5a3d5d2",
+                "namespace": "default",
+                "uid": "21287fd3-d483-4f1d-95d3-a5600d49c9dd",
+                "resourceVersion": "455",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "StatefulSet",
+                "namespace": "default",
+                "name": "vac-pos",
+                "uid": "cb64fd41-37d4-471b-b895-ffcac644dfcb",
+                "apiVersion": "apps/v1",
+                "resourceVersion": "448"
+            },
+            "reason": "SuccessfulCreate",
+            "message": "create Pod vac-pos-0 in StatefulSet vac-pos successful",
+            "source": {
+                "component": "statefulset-controller"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend-68477f7b6b-ckqpn.17051a88d4118320",
+                "namespace": "default",
+                "uid": "fca06b4c-315e-47a7-8813-f610da60d8e6",
+                "resourceVersion": "441",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vaccination-backend-68477f7b6b-ckqpn",
+                "uid": "190cbaca-d4c1-48e7-b8ba-d35484756ba0",
+                "apiVersion": "v1",
+                "resourceVersion": "430"
+            },
+            "reason": "Scheduled",
+            "message": "Successfully assigned default/vaccination-backend-68477f7b6b-ckqpn to minikube",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend-68477f7b6b-ckqpn.17051a88f82a1dc4",
+                "namespace": "default",
+                "uid": "3dcae747-472f-4cf4-83e5-be1749d0a44d",
+                "resourceVersion": "551",
+                "creationTimestamp": "2022-07-25T15:00:13Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vaccination-backend-68477f7b6b-ckqpn",
+                "uid": "190cbaca-d4c1-48e7-b8ba-d35484756ba0",
+                "apiVersion": "v1",
+                "resourceVersion": "438",
+                "fieldPath": "spec.containers{vaccination-backend}"
+            },
+            "reason": "Pulling",
+            "message": "Pulling image \"nvallore/vaccination-backend\"",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:00:13Z",
+            "lastTimestamp": "2022-07-25T15:01:25Z",
+            "count": 2,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend-68477f7b6b-ckqpn.17051a992c1a88fd",
+                "namespace": "default",
+                "uid": "9a8e8154-be0c-48b3-9de5-96c1d6b35f4b",
+                "resourceVersion": "541",
+                "creationTimestamp": "2022-07-25T15:01:22Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vaccination-backend-68477f7b6b-ckqpn",
+                "uid": "190cbaca-d4c1-48e7-b8ba-d35484756ba0",
+                "apiVersion": "v1",
+                "resourceVersion": "438",
+                "fieldPath": "spec.containers{vaccination-backend}"
+            },
+            "reason": "Pulled",
+            "message": "Successfully pulled image \"nvallore/vaccination-backend\" in 1m9.632756495s",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:01:22Z",
+            "lastTimestamp": "2022-07-25T15:01:22Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend-68477f7b6b-ckqpn.17051a9930930ba9",
+                "namespace": "default",
+                "uid": "e38c6941-f1f4-463e-9910-22e5a17e46f3",
+                "resourceVersion": "649",
+                "creationTimestamp": "2022-07-25T15:01:23Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vaccination-backend-68477f7b6b-ckqpn",
+                "uid": "190cbaca-d4c1-48e7-b8ba-d35484756ba0",
+                "apiVersion": "v1",
+                "resourceVersion": "438",
+                "fieldPath": "spec.containers{vaccination-backend}"
+            },
+            "reason": "Created",
+            "message": "Created container vaccination-backend",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:01:23Z",
+            "lastTimestamp": "2022-07-25T15:02:50Z",
+            "count": 2,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend-68477f7b6b-ckqpn.17051a9934da68c1",
+                "namespace": "default",
+                "uid": "d6fdadd2-c83c-4761-b9fc-397cc253db0a",
+                "resourceVersion": "650",
+                "creationTimestamp": "2022-07-25T15:01:23Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vaccination-backend-68477f7b6b-ckqpn",
+                "uid": "190cbaca-d4c1-48e7-b8ba-d35484756ba0",
+                "apiVersion": "v1",
+                "resourceVersion": "438",
+                "fieldPath": "spec.containers{vaccination-backend}"
+            },
+            "reason": "Started",
+            "message": "Started container vaccination-backend",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:01:23Z",
+            "lastTimestamp": "2022-07-25T15:02:50Z",
+            "count": 2,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend-68477f7b6b-ckqpn.17051aad71467a06",
+                "namespace": "default",
+                "uid": "17bcd126-a3a3-49b1-a302-b91539568464",
+                "resourceVersion": "648",
+                "creationTimestamp": "2022-07-25T15:02:49Z"
+            },
+            "involvedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "vaccination-backend-68477f7b6b-ckqpn",
+                "uid": "190cbaca-d4c1-48e7-b8ba-d35484756ba0",
+                "apiVersion": "v1",
+                "resourceVersion": "438",
+                "fieldPath": "spec.containers{vaccination-backend}"
+            },
+            "reason": "Pulled",
+            "message": "Successfully pulled image \"nvallore/vaccination-backend\" in 1m24.838731946s",
+            "source": {
+                "component": "kubelet",
+                "host": "minikube"
+            },
+            "firstTimestamp": "2022-07-25T15:02:49Z",
+            "lastTimestamp": "2022-07-25T15:02:49Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend-68477f7b6b.17051a88cfd289ac",
+                "namespace": "default",
+                "uid": "b8ca36a3-79da-4b38-b712-896089b5b062",
+                "resourceVersion": "435",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "ReplicaSet",
+                "namespace": "default",
+                "name": "vaccination-backend-68477f7b6b",
+                "uid": "9208b25b-03f8-432e-ad05-fc1a436bcf2f",
+                "apiVersion": "apps/v1",
+                "resourceVersion": "427"
+            },
+            "reason": "SuccessfulCreate",
+            "message": "Created pod: vaccination-backend-68477f7b6b-ckqpn",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend.17051a88cf8f4f08",
+                "namespace": "default",
+                "uid": "445a5355-57d4-43cd-9415-3dd4a071a289",
+                "resourceVersion": "431",
+                "creationTimestamp": "2022-07-25T15:00:12Z"
+            },
+            "involvedObject": {
+                "kind": "Deployment",
+                "namespace": "default",
+                "name": "vaccination-backend",
+                "uid": "c00ac924-c87b-4917-b09a-c3619211bdff",
+                "apiVersion": "apps/v1",
+                "resourceVersion": "422"
+            },
+            "reason": "ScalingReplicaSet",
+            "message": "Scaled up replica set vaccination-backend-68477f7b6b to 1",
+            "source": {
+                "component": "deployment-controller"
+            },
+            "firstTimestamp": "2022-07-25T15:00:12Z",
+            "lastTimestamp": "2022-07-25T15:00:12Z",
+            "count": 1,
+            "type": "Normal",
+            "eventTime": null,
+            "reportingComponent": "",
+            "reportingInstance": ""
+        }
+    ]
+}

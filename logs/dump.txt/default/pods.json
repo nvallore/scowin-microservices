@@ -1,0 +1,1000 @@
+{
+    "kind": "PodList",
+    "apiVersion": "v1",
+    "metadata": {
+        "resourceVersion": "1357"
+    },
+    "items": [
+        {
+            "metadata": {
+                "name": "report-backend-7dfb94885c-jzd2j",
+                "generateName": "report-backend-7dfb94885c-",
+                "namespace": "default",
+                "uid": "e10b618b-54a6-4492-9387-dd2eca1e2b10",
+                "resourceVersion": "597",
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "labels": {
+                    "app": "report-backend",
+                    "pod-template-hash": "7dfb94885c"
+                },
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "kind": "ReplicaSet",
+                        "name": "report-backend-7dfb94885c",
+                        "uid": "f95090ff-e8f8-4e5e-8aaf-cbd4b2bd9604",
+                        "controller": true,
+                        "blockOwnerDeletion": true
+                    }
+                ]
+            },
+            "spec": {
+                "volumes": [
+                    {
+                        "name": "kube-api-access-d4sx6",
+                        "projected": {
+                            "sources": [
+                                {
+                                    "serviceAccountToken": {
+                                        "expirationSeconds": 3607,
+                                        "path": "token"
+                                    }
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "kube-root-ca.crt",
+                                        "items": [
+                                            {
+                                                "key": "ca.crt",
+                                                "path": "ca.crt"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "downwardAPI": {
+                                        "items": [
+                                            {
+                                                "path": "namespace",
+                                                "fieldRef": {
+                                                    "apiVersion": "v1",
+                                                    "fieldPath": "metadata.namespace"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "defaultMode": 420
+                        }
+                    }
+                ],
+                "containers": [
+                    {
+                        "name": "report-backend",
+                        "image": "nvallore/report-backend",
+                        "args": [
+                            "bash",
+                            "-c",
+                            "python main.py"
+                        ],
+                        "ports": [
+                            {
+                                "containerPort": 8000,
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "resources": {},
+                        "volumeMounts": [
+                            {
+                                "name": "kube-api-access-d4sx6",
+                                "readOnly": true,
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+                            }
+                        ],
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "imagePullPolicy": "Always"
+                    }
+                ],
+                "restartPolicy": "Always",
+                "terminationGracePeriodSeconds": 30,
+                "dnsPolicy": "ClusterFirst",
+                "serviceAccountName": "default",
+                "serviceAccount": "default",
+                "nodeName": "minikube",
+                "securityContext": {},
+                "schedulerName": "default-scheduler",
+                "tolerations": [
+                    {
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "priority": 0,
+                "enableServiceLinks": true,
+                "preemptionPolicy": "PreemptLowerPriority"
+            },
+            "status": {
+                "phase": "Running",
+                "conditions": [
+                    {
+                        "type": "Initialized",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:00:12Z"
+                    },
+                    {
+                        "type": "Ready",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:02:16Z"
+                    },
+                    {
+                        "type": "ContainersReady",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:02:16Z"
+                    },
+                    {
+                        "type": "PodScheduled",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:00:12Z"
+                    }
+                ],
+                "hostIP": "192.168.49.2",
+                "podIP": "172.17.0.5",
+                "podIPs": [
+                    {
+                        "ip": "172.17.0.5"
+                    }
+                ],
+                "startTime": "2022-07-25T15:00:12Z",
+                "containerStatuses": [
+                    {
+                        "name": "report-backend",
+                        "state": {
+                            "running": {
+                                "startedAt": "2022-07-25T15:02:16Z"
+                            }
+                        },
+                        "lastState": {},
+                        "ready": true,
+                        "restartCount": 0,
+                        "image": "nvallore/report-backend:latest",
+                        "imageID": "docker-pullable://nvallore/report-backend@sha256:a88a231ac3e0bdcf32a15989212038bcedd5ca92c1077256b7987925c2c52103",
+                        "containerID": "docker://8f9f6dc08f35bec7fc4a5a43623584cbb80a6636d62b60f516f217f681783d9b",
+                        "started": true
+                    }
+                ],
+                "qosClass": "BestEffort"
+            }
+        },
+        {
+            "metadata": {
+                "name": "stu-pos-0",
+                "generateName": "stu-pos-",
+                "namespace": "default",
+                "uid": "d8d9bb35-82bc-4faf-8866-db8f40588db7",
+                "resourceVersion": "633",
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "labels": {
+                    "app": "stu-pos",
+                    "controller-revision-hash": "stu-pos-656b645bcf",
+                    "role": "service",
+                    "statefulset.kubernetes.io/pod-name": "stu-pos-0"
+                },
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "kind": "StatefulSet",
+                        "name": "stu-pos",
+                        "uid": "8351962a-03b0-478e-a6d2-6ea182f223c9",
+                        "controller": true,
+                        "blockOwnerDeletion": true
+                    }
+                ]
+            },
+            "spec": {
+                "volumes": [
+                    {
+                        "name": "stu-pos",
+                        "persistentVolumeClaim": {
+                            "claimName": "stu-pos"
+                        }
+                    },
+                    {
+                        "name": "kube-api-access-x6md8",
+                        "projected": {
+                            "sources": [
+                                {
+                                    "serviceAccountToken": {
+                                        "expirationSeconds": 3607,
+                                        "path": "token"
+                                    }
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "kube-root-ca.crt",
+                                        "items": [
+                                            {
+                                                "key": "ca.crt",
+                                                "path": "ca.crt"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "downwardAPI": {
+                                        "items": [
+                                            {
+                                                "path": "namespace",
+                                                "fieldRef": {
+                                                    "apiVersion": "v1",
+                                                    "fieldPath": "metadata.namespace"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "defaultMode": 420
+                        }
+                    }
+                ],
+                "containers": [
+                    {
+                        "name": "stu-pos",
+                        "image": "postgres",
+                        "ports": [
+                            {
+                                "name": "stu-pos",
+                                "containerPort": 5432,
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "env": [
+                            {
+                                "name": "POSTGRES_PASSWORD",
+                                "value": "postgres"
+                            },
+                            {
+                                "name": "POSTGRES_USER",
+                                "value": "postgres"
+                            }
+                        ],
+                        "resources": {},
+                        "volumeMounts": [
+                            {
+                                "name": "stu-pos",
+                                "mountPath": "/var/lib/postgresql/data"
+                            },
+                            {
+                                "name": "kube-api-access-x6md8",
+                                "readOnly": true,
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+                            }
+                        ],
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "imagePullPolicy": "Always"
+                    }
+                ],
+                "restartPolicy": "Always",
+                "terminationGracePeriodSeconds": 30,
+                "dnsPolicy": "ClusterFirst",
+                "serviceAccountName": "default",
+                "serviceAccount": "default",
+                "nodeName": "minikube",
+                "securityContext": {},
+                "hostname": "stu-pos-0",
+                "subdomain": "stu-pos",
+                "schedulerName": "default-scheduler",
+                "tolerations": [
+                    {
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "priority": 0,
+                "enableServiceLinks": true,
+                "preemptionPolicy": "PreemptLowerPriority"
+            },
+            "status": {
+                "phase": "Running",
+                "conditions": [
+                    {
+                        "type": "Initialized",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:00:48Z"
+                    },
+                    {
+                        "type": "Ready",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:02:44Z"
+                    },
+                    {
+                        "type": "ContainersReady",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:02:44Z"
+                    },
+                    {
+                        "type": "PodScheduled",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:00:48Z"
+                    }
+                ],
+                "hostIP": "192.168.49.2",
+                "podIP": "172.17.0.7",
+                "podIPs": [
+                    {
+                        "ip": "172.17.0.7"
+                    }
+                ],
+                "startTime": "2022-07-25T15:00:48Z",
+                "containerStatuses": [
+                    {
+                        "name": "stu-pos",
+                        "state": {
+                            "running": {
+                                "startedAt": "2022-07-25T15:02:44Z"
+                            }
+                        },
+                        "lastState": {},
+                        "ready": true,
+                        "restartCount": 0,
+                        "image": "postgres:latest",
+                        "imageID": "docker-pullable://postgres@sha256:3e2eba0a6efbeb396e086c332c5a85be06997d2cf573d34794764625f405df4e",
+                        "containerID": "docker://e248b50be188d13e1a77dcf6b5d0f15933e93ea38b1ce37bd98f76d70fa516a9",
+                        "started": true
+                    }
+                ],
+                "qosClass": "BestEffort"
+            }
+        },
+        {
+            "metadata": {
+                "name": "students-backend-84587689d5-8sr4x",
+                "generateName": "students-backend-84587689d5-",
+                "namespace": "default",
+                "uid": "61d388ea-cb28-4cc9-b909-954e6b8939e1",
+                "resourceVersion": "641",
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "labels": {
+                    "app": "students-backend",
+                    "pod-template-hash": "84587689d5"
+                },
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "kind": "ReplicaSet",
+                        "name": "students-backend-84587689d5",
+                        "uid": "85528835-c8a7-4d0f-9b0a-8124c0345788",
+                        "controller": true,
+                        "blockOwnerDeletion": true
+                    }
+                ]
+            },
+            "spec": {
+                "volumes": [
+                    {
+                        "name": "kube-api-access-sf6wz",
+                        "projected": {
+                            "sources": [
+                                {
+                                    "serviceAccountToken": {
+                                        "expirationSeconds": 3607,
+                                        "path": "token"
+                                    }
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "kube-root-ca.crt",
+                                        "items": [
+                                            {
+                                                "key": "ca.crt",
+                                                "path": "ca.crt"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "downwardAPI": {
+                                        "items": [
+                                            {
+                                                "path": "namespace",
+                                                "fieldRef": {
+                                                    "apiVersion": "v1",
+                                                    "fieldPath": "metadata.namespace"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "defaultMode": 420
+                        }
+                    }
+                ],
+                "containers": [
+                    {
+                        "name": "students-backend",
+                        "image": "nvallore/students-backend",
+                        "args": [
+                            "bash",
+                            "-c",
+                            "python manage.py makemigrations \u0026\u0026 python manage.py migrate \u0026\u0026 python manage.py runserver 0.0.0.0:8000"
+                        ],
+                        "ports": [
+                            {
+                                "containerPort": 8000,
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "env": [
+                            {
+                                "name": "POSTGRES_NAME",
+                                "value": "postgres"
+                            },
+                            {
+                                "name": "POSTGRES_PASSWORD",
+                                "value": "postgres"
+                            },
+                            {
+                                "name": "POSTGRES_USER",
+                                "value": "postgres"
+                            },
+                            {
+                                "name": "POSTGRES_DB",
+                                "valueFrom": {
+                                    "configMapKeyRef": {
+                                        "name": "app-variables",
+                                        "key": "POSTGRES_DB"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "DB_HOST",
+                                "valueFrom": {
+                                    "configMapKeyRef": {
+                                        "name": "app-variables",
+                                        "key": "DB_HOST_STUDENT"
+                                    }
+                                }
+                            }
+                        ],
+                        "resources": {},
+                        "volumeMounts": [
+                            {
+                                "name": "kube-api-access-sf6wz",
+                                "readOnly": true,
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+                            }
+                        ],
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "imagePullPolicy": "Always"
+                    }
+                ],
+                "restartPolicy": "Always",
+                "terminationGracePeriodSeconds": 30,
+                "dnsPolicy": "ClusterFirst",
+                "serviceAccountName": "default",
+                "serviceAccount": "default",
+                "nodeName": "minikube",
+                "securityContext": {},
+                "schedulerName": "default-scheduler",
+                "tolerations": [
+                    {
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "priority": 0,
+                "enableServiceLinks": true,
+                "preemptionPolicy": "PreemptLowerPriority"
+            },
+            "status": {
+                "phase": "Running",
+                "conditions": [
+                    {
+                        "type": "Initialized",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:00:12Z"
+                    },
+                    {
+                        "type": "Ready",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:02:47Z"
+                    },
+                    {
+                        "type": "ContainersReady",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:02:47Z"
+                    },
+                    {
+                        "type": "PodScheduled",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:00:12Z"
+                    }
+                ],
+                "hostIP": "192.168.49.2",
+                "podIP": "172.17.0.3",
+                "podIPs": [
+                    {
+                        "ip": "172.17.0.3"
+                    }
+                ],
+                "startTime": "2022-07-25T15:00:12Z",
+                "containerStatuses": [
+                    {
+                        "name": "students-backend",
+                        "state": {
+                            "running": {
+                                "startedAt": "2022-07-25T15:02:47Z"
+                            }
+                        },
+                        "lastState": {
+                            "terminated": {
+                                "exitCode": 1,
+                                "reason": "Error",
+                                "startedAt": "2022-07-25T15:01:11Z",
+                                "finishedAt": "2022-07-25T15:01:12Z",
+                                "containerID": "docker://b5c7812b703adec40b5f8a7eb357a86ec97f639f7929b0fddac5722519bc3080"
+                            }
+                        },
+                        "ready": true,
+                        "restartCount": 1,
+                        "image": "nvallore/students-backend:latest",
+                        "imageID": "docker-pullable://nvallore/students-backend@sha256:06e410257e569fb3594debaa09a4a57a99dd2dfb2287e7848ca0aa2b82c7d52e",
+                        "containerID": "docker://b621a073a6c464f3c93a77136c11359799995ed6f0f6693bd1bbd0e2f86e5810",
+                        "started": true
+                    }
+                ],
+                "qosClass": "BestEffort"
+            }
+        },
+        {
+            "metadata": {
+                "name": "vac-pos-0",
+                "generateName": "vac-pos-",
+                "namespace": "default",
+                "uid": "3a36a65f-fa0e-4a95-a45e-ff2d279a15f6",
+                "resourceVersion": "624",
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "labels": {
+                    "app": "vac-pos",
+                    "controller-revision-hash": "vac-pos-79c99b6cf4",
+                    "role": "service",
+                    "statefulset.kubernetes.io/pod-name": "vac-pos-0"
+                },
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "kind": "StatefulSet",
+                        "name": "vac-pos",
+                        "uid": "cb64fd41-37d4-471b-b895-ffcac644dfcb",
+                        "controller": true,
+                        "blockOwnerDeletion": true
+                    }
+                ]
+            },
+            "spec": {
+                "volumes": [
+                    {
+                        "name": "vac-pos",
+                        "persistentVolumeClaim": {
+                            "claimName": "vac-pos"
+                        }
+                    },
+                    {
+                        "name": "kube-api-access-b2c7c",
+                        "projected": {
+                            "sources": [
+                                {
+                                    "serviceAccountToken": {
+                                        "expirationSeconds": 3607,
+                                        "path": "token"
+                                    }
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "kube-root-ca.crt",
+                                        "items": [
+                                            {
+                                                "key": "ca.crt",
+                                                "path": "ca.crt"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "downwardAPI": {
+                                        "items": [
+                                            {
+                                                "path": "namespace",
+                                                "fieldRef": {
+                                                    "apiVersion": "v1",
+                                                    "fieldPath": "metadata.namespace"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "defaultMode": 420
+                        }
+                    }
+                ],
+                "containers": [
+                    {
+                        "name": "vac-pos",
+                        "image": "postgres",
+                        "args": [
+                            "-p",
+                            "5433"
+                        ],
+                        "env": [
+                            {
+                                "name": "POSTGRES_DB",
+                                "value": "postgres"
+                            },
+                            {
+                                "name": "POSTGRES_PASSWORD",
+                                "value": "postgres"
+                            },
+                            {
+                                "name": "POSTGRES_USER",
+                                "value": "postgres"
+                            }
+                        ],
+                        "resources": {},
+                        "volumeMounts": [
+                            {
+                                "name": "vac-pos",
+                                "mountPath": "/var/lib/postgresql/data"
+                            },
+                            {
+                                "name": "kube-api-access-b2c7c",
+                                "readOnly": true,
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+                            }
+                        ],
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "imagePullPolicy": "Always"
+                    }
+                ],
+                "restartPolicy": "Always",
+                "terminationGracePeriodSeconds": 30,
+                "dnsPolicy": "ClusterFirst",
+                "serviceAccountName": "default",
+                "serviceAccount": "default",
+                "nodeName": "minikube",
+                "securityContext": {},
+                "hostname": "vac-pos-0",
+                "subdomain": "vac-pos",
+                "schedulerName": "default-scheduler",
+                "tolerations": [
+                    {
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "priority": 0,
+                "enableServiceLinks": true,
+                "preemptionPolicy": "PreemptLowerPriority"
+            },
+            "status": {
+                "phase": "Running",
+                "conditions": [
+                    {
+                        "type": "Initialized",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:00:25Z"
+                    },
+                    {
+                        "type": "Ready",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:02:42Z"
+                    },
+                    {
+                        "type": "ContainersReady",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:02:42Z"
+                    },
+                    {
+                        "type": "PodScheduled",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:00:25Z"
+                    }
+                ],
+                "hostIP": "192.168.49.2",
+                "podIP": "172.17.0.6",
+                "podIPs": [
+                    {
+                        "ip": "172.17.0.6"
+                    }
+                ],
+                "startTime": "2022-07-25T15:00:25Z",
+                "containerStatuses": [
+                    {
+                        "name": "vac-pos",
+                        "state": {
+                            "running": {
+                                "startedAt": "2022-07-25T15:02:42Z"
+                            }
+                        },
+                        "lastState": {},
+                        "ready": true,
+                        "restartCount": 0,
+                        "image": "postgres:latest",
+                        "imageID": "docker-pullable://postgres@sha256:3e2eba0a6efbeb396e086c332c5a85be06997d2cf573d34794764625f405df4e",
+                        "containerID": "docker://13bb5da7c37d408462ffb7f8214ebc3aa4e763bebf71b17beae7666d65ea8a4b",
+                        "started": true
+                    }
+                ],
+                "qosClass": "BestEffort"
+            }
+        },
+        {
+            "metadata": {
+                "name": "vaccination-backend-68477f7b6b-ckqpn",
+                "generateName": "vaccination-backend-68477f7b6b-",
+                "namespace": "default",
+                "uid": "190cbaca-d4c1-48e7-b8ba-d35484756ba0",
+                "resourceVersion": "652",
+                "creationTimestamp": "2022-07-25T15:00:12Z",
+                "labels": {
+                    "app": "vaccination-backend",
+                    "pod-template-hash": "68477f7b6b"
+                },
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "kind": "ReplicaSet",
+                        "name": "vaccination-backend-68477f7b6b",
+                        "uid": "9208b25b-03f8-432e-ad05-fc1a436bcf2f",
+                        "controller": true,
+                        "blockOwnerDeletion": true
+                    }
+                ]
+            },
+            "spec": {
+                "volumes": [
+                    {
+                        "name": "kube-api-access-flj75",
+                        "projected": {
+                            "sources": [
+                                {
+                                    "serviceAccountToken": {
+                                        "expirationSeconds": 3607,
+                                        "path": "token"
+                                    }
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "kube-root-ca.crt",
+                                        "items": [
+                                            {
+                                                "key": "ca.crt",
+                                                "path": "ca.crt"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "downwardAPI": {
+                                        "items": [
+                                            {
+                                                "path": "namespace",
+                                                "fieldRef": {
+                                                    "apiVersion": "v1",
+                                                    "fieldPath": "metadata.namespace"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "defaultMode": 420
+                        }
+                    }
+                ],
+                "containers": [
+                    {
+                        "name": "vaccination-backend",
+                        "image": "nvallore/vaccination-backend",
+                        "args": [
+                            "bash",
+                            "-c",
+                            "python manage.py makemigrations \u0026\u0026 python manage.py migrate \u0026\u0026 python manage.py runserver 0.0.0.0:8000"
+                        ],
+                        "ports": [
+                            {
+                                "containerPort": 8000,
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "env": [
+                            {
+                                "name": "POSTGRES_NAME",
+                                "value": "postgres"
+                            },
+                            {
+                                "name": "POSTGRES_PASSWORD",
+                                "value": "postgres"
+                            },
+                            {
+                                "name": "POSTGRES_USER",
+                                "value": "postgres"
+                            },
+                            {
+                                "name": "POSTGRES_DB",
+                                "valueFrom": {
+                                    "configMapKeyRef": {
+                                        "name": "app-variables",
+                                        "key": "POSTGRES_DB"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "DB_HOST",
+                                "valueFrom": {
+                                    "configMapKeyRef": {
+                                        "name": "app-variables",
+                                        "key": "DB_HOST_VACCINATION"
+                                    }
+                                }
+                            }
+                        ],
+                        "resources": {},
+                        "volumeMounts": [
+                            {
+                                "name": "kube-api-access-flj75",
+                                "readOnly": true,
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+                            }
+                        ],
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "imagePullPolicy": "Always"
+                    }
+                ],
+                "restartPolicy": "Always",
+                "terminationGracePeriodSeconds": 30,
+                "dnsPolicy": "ClusterFirst",
+                "serviceAccountName": "default",
+                "serviceAccount": "default",
+                "nodeName": "minikube",
+                "securityContext": {},
+                "schedulerName": "default-scheduler",
+                "tolerations": [
+                    {
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "effect": "NoExecute",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "priority": 0,
+                "enableServiceLinks": true,
+                "preemptionPolicy": "PreemptLowerPriority"
+            },
+            "status": {
+                "phase": "Running",
+                "conditions": [
+                    {
+                        "type": "Initialized",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:00:12Z"
+                    },
+                    {
+                        "type": "Ready",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:02:50Z"
+                    },
+                    {
+                        "type": "ContainersReady",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:02:50Z"
+                    },
+                    {
+                        "type": "PodScheduled",
+                        "status": "True",
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2022-07-25T15:00:12Z"
+                    }
+                ],
+                "hostIP": "192.168.49.2",
+                "podIP": "172.17.0.4",
+                "podIPs": [
+                    {
+                        "ip": "172.17.0.4"
+                    }
+                ],
+                "startTime": "2022-07-25T15:00:12Z",
+                "containerStatuses": [
+                    {
+                        "name": "vaccination-backend",
+                        "state": {
+                            "running": {
+                                "startedAt": "2022-07-25T15:02:50Z"
+                            }
+                        },
+                        "lastState": {
+                            "terminated": {
+                                "exitCode": 1,
+                                "reason": "Error",
+                                "startedAt": "2022-07-25T15:01:23Z",
+                                "finishedAt": "2022-07-25T15:01:24Z",
+                                "containerID": "docker://f2f621a0dbe015d766aea535024ad16c72511d3b6c10bec064042812f261b8ed"
+                            }
+                        },
+                        "ready": true,
+                        "restartCount": 1,
+                        "image": "nvallore/vaccination-backend:latest",
+                        "imageID": "docker-pullable://nvallore/vaccination-backend@sha256:d33cc6ec7464193a8fe17c789ef2dcf4b57483f0c4be52b8a5b8b329439fd1e6",
+                        "containerID": "docker://a017337d97796ce9fbde9e09b51dde1dbfe92e90fb39335f3c23ecda2ce40d04",
+                        "started": true
+                    }
+                ],
+                "qosClass": "BestEffort"
+            }
+        }
+    ]
+}
